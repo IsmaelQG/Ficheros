@@ -1,8 +1,5 @@
-package ejercicio_8;
+package ejercicio_8_10_11;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -11,6 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import com.thoughtworks.xstream.XStream;
 
@@ -26,7 +24,7 @@ public class Main {
 		
 		Contacto contacto;
 		
-		String nombres[] = {"Ismael", "Aaron"};
+		String nombres[] = {"Ismael", "Jose"};
 		int telefonos[] = {698223020, 765889234};
 		String direcciones[] = {"C/Monaco", "C/Jose de Espronceda"};
 		int codigosPostal[] = {11207, 11205};
@@ -55,7 +53,17 @@ public class Main {
 		x.addImplicitCollection(ListaContactos.class, "listaContactos");
 		x.toXML(listaContactos, new FileOutputStream("Contactos.xml"));
 		
-		try {
+		listaContactos = (ListaContactos) x.fromXML(new FileInputStream("Contactos.xml"));
+		ArrayList<Contacto> listaArrayContactos = listaContactos.getListaContactos();
+		
+		Iterator iterator = listaArrayContactos.listIterator();
+		while(iterator.hasNext()) {
+			contacto = (Contacto) iterator.next();
+			System.out.printf("%s\n%d\n%s\n%d\n%s\n%s\n%.2f\n\n", contacto.getNombre(), contacto.getTelefono(), contacto.getDireccion(), contacto.getcPostal(), contacto.getfNac().toString(), contacto.isSiDebo(), contacto.getDebito());
+		}
+		
+		/*
+		 try {
 			while(true) {
 				contacto= (Contacto) dataIS.readObject();
 				System.out.printf("%s\n%d\n%s\n%d\n%s\n%s\n%.2f\n\n", contacto.getNombre(), contacto.getTelefono(), contacto.getDireccion(), contacto.getcPostal(), contacto.getfNac().toString(), contacto.isSiDebo(), contacto.getDebito());
@@ -65,6 +73,8 @@ public class Main {
 			
 		}
 		dataIS.close();
+		
+		*/
 		
 	}
 
