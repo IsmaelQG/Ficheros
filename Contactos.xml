@@ -1,0 +1,38 @@
+<ListaContactos>
+  <Contacto>
+    <nombre>Ismael</nombre>
+    <telefono>698223020</telefono>
+    <direccion>C/Monaco</direccion>
+    <cPostal>11207</cPostal>
+    <fNac>2000-01-01</fNac>
+    <siDebo>true</siDebo>
+    <debito>20.0</debito>
+  </Contacto>
+  <Contacto>
+    <nombre>Aaron</nombre>
+    <telefono>765889234</telefono>
+    <direccion>C/Jose de Espronceda</direccion>
+    <cPostal>11205</cPostal>
+    <fNac>2000-11-11</fNac>
+    <siDebo>false</siDebo>
+    <debito>0.0</debito>
+  </Contacto>
+  <Contacto>
+    <nombre>Manu</nombre>
+    <telefono>854838221</telefono>
+    <direccion>C/Rayos X</direccion>
+    <cPostal>11203</cPostal>
+    <fNac>1995-05-29</fNac>
+    <siDebo>true</siDebo>
+    <debito>89.35</debito>
+  </Contacto>
+  <Contacto>
+    <nombre>Dario</nombre>
+    <telefono>854838221</telefono>
+    <direccion>C/Tyler1</direccion>
+    <cPostal>11203</cPostal>
+    <fNac>1995-05-29</fNac>
+    <siDebo>true</siDebo>
+    <debito>89.35</debito>
+  </Contacto>
+</ListaContactos>
